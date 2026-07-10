@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-ufc
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: Bruno.9512
+      MYSQL_DATABASE: ufc
+      MYSQL_USER: ufc
+      MYSQL_PASSWORD: 123456
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -pBruno.9512"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: .
+    container_name: api-ufc
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    ports:
+      - "8081:8081"
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/ufc
+      SPRING_DATASOURCE_USERNAME: ufc
+      SPRING_DATASOURCE_PASSWORD: 123456
+
+volumes:
+  mysql_data:

@@ -1,0 +1,12 @@
+target/*
+!target/ufc-0.0.1-SNAPSHOT.jar
+
+.idea
+
+.vscode
+
+.git
+
+*.iml
+
+README.md
