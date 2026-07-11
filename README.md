@@ -80,7 +80,7 @@ docker compose up --build
 
 ### Containers em execução
 
-![Docker](images/Docker.png)
+![Docker](images/docker.png)
 
 ---
 
@@ -98,7 +98,7 @@ Cobertura aproximada:
 
 ### Relatório JaCoCo
 
-![JaCoCo](images/JaCoCo.png)
+![JaCoCo](images/jacoco.png)
 
 ---
 
@@ -124,7 +124,7 @@ Cobertura aproximada:
 
 Todas as rotas podem ser testadas utilizando o Postman.
 
-![Postman](images/Postman.png)
+![Postman](images/postman.png)
 
 ---
 
