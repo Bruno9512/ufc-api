@@ -1,9 +1,16 @@
-# UFC API 🥊
+# 🥊 UFC API
 
-API REST desenvolvida em **Java 21 + Spring Boot** para gerenciamento de lutadores do UFC.
+![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=springboot)
+![Spring Security](https://img.shields.io/badge/Spring_Security-JWT-6DB33F?style=for-the-badge&logo=springsecurity)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)
+![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger)
+![JUnit 5](https://img.shields.io/badge/JUnit-5-25A162?style=for-the-badge&logo=junit5)
+![Mockito](https://img.shields.io/badge/Mockito-Testes-78A641?style=for-the-badge)
+![JaCoCo](https://img.shields.io/badge/JaCoCo-90%25-success?style=for-the-badge)
 
-O projeto foi desenvolvido com foco em boas práticas de desenvolvimento backend, utilizando arquitetura em camadas, autenticação JWT, Docker, documentação Swagger/OpenAPI e testes automatizados.
-
+API REST desenvolvida em **Java + Spring Boot** para gerenciamento de lutadores do UFC, utilizando autenticação JWT, Docker, Swagger e testes automatizados.
 ---
 
 # Tecnologias utilizadas
