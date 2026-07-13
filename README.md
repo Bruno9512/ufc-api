@@ -1,163 +1,370 @@
 # 🥊 UFC API
 
+
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=springboot)
-![Spring Security](https://img.shields.io/badge/Spring_Security-JWT-6DB33F?style=for-the-badge&logo=springsecurity)
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql)
+![JWT](https://img.shields.io/badge/JWT-Authentication-black?style=for-the-badge&logo=jsonwebtokens)
 ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger)
-![JUnit](https://img.shields.io/badge/JUnit-5-green?style=for-the-badge&logo=junit5)
-![Mockito](https://img.shields.io/badge/Mockito-Testes-brightgreen?style=for-the-badge)
 ![JaCoCo](https://img.shields.io/badge/JaCoCo-90%25-success?style=for-the-badge)
+![Render](https://img.shields.io/badge/Deploy-Render-46E3B7?style=for-the-badge&logo=render)
+![Railway](https://img.shields.io/badge/Database-Railway-0B0D0E?style=for-the-badge&logo=railway)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+API REST desenvolvida com **Spring Boot** para gerenciamento de lutadores do UFC.
 
-API REST desenvolvida em **Java + Spring Boot** para gerenciamento de lutadores do UFC.
+O projeto foi desenvolvido como portfólio para demonstrar conhecimentos em desenvolvimento Backend utilizando Java, Spring Boot, autenticação JWT, Docker, testes automatizados e deploy em nuvem.
 
 ---
 
-# 📚 Tecnologias
+# 🚀 Demonstração
+
+## API Online
+
+https://ufc-api-chk7.onrender.com
+
+## Swagger
+
+https://ufc-api-chk7.onrender.com/swagger-ui/index.html
+
+---
+
+# 📖 Funcionalidades
+
+- Cadastro de usuários
+- Login utilizando JWT
+- Cadastro de lutadores
+- Atualização de lutadores
+- Exclusão de lutadores
+- Busca por ID
+- Busca por nome
+- Busca por país
+- Busca por categoria
+- Busca por altura
+- Paginação
+- Documentação Swagger
+- Tratamento global de exceções
+
+---
+
+# 🛠 Tecnologias utilizadas
 
 - Java 21
 - Spring Boot
 - Spring Security
+- Spring Data JPA
 - JWT
 - MySQL
+- Maven
 - Docker
-- Swagger
+- Docker Compose
+- Swagger / OpenAPI
 - JUnit 5
 - Mockito
 - JaCoCo
+- Railway
+- Render
+- Git
+- GitHub
 
 ---
 
 # 🏗 Arquitetura
 
+```
 Controller
-
-↓
-
+     ↓
 Service
-
-↓
-
+     ↓
 Repository
-
-↓
-
+     ↓
 MySQL
+```
+
+O projeto utiliza arquitetura em camadas seguindo as boas práticas do Spring Boot.
+
+---
+
+# 📂 Estrutura do projeto
+
+```
+src
+├── main
+│   ├── controller
+│   ├── service
+│   ├── repository
+│   ├── dto
+│   ├── mapper
+│   ├── model
+│   ├── security
+│   ├── config
+│   └── exception
+│
+└── test
+    ├── controller
+    ├── service
+    ├── security
+    └── exception
+```
 
 ---
 
 # 🔐 Autenticação
 
-- Cadastro de usuários
-- Login
-- JWT
-- Roles (ADMIN / USER)
+A API utiliza autenticação **JWT (Bearer Token)**.
+
+Os endpoints protegidos exigem autenticação.
+
+Endpoints públicos:
+
+- POST /auth/register
+- POST /auth/login
+- Swagger
+- OpenAPI
 
 ---
 
-# 📖 Documentação da API
+# 🚀 Como testar a API
 
-A documentação é disponibilizada através do Swagger.
+## 1. Acesse o Swagger
+
+https://ufc-api-chk7.onrender.com/swagger-ui/index.html
+
+---
+
+## 2. Cadastre um usuário
+
+POST
 
 ```
-http://localhost:8080/swagger-ui/index.html
+/auth/register
 ```
 
-## Interface Swagger
+Exemplo
 
-![Swagger](images/swagger.png)
+```json
+{
+  "username": "bruno",
+  "password": "123456",
+  "role": "ADMIN"
+}
+```
+
+Clique em **Execute**.
+
+---
+
+## 3. Faça Login
+
+POST
+
+```
+/auth/login
+```
+
+Exemplo
+
+```json
+{
+  "username": "bruno",
+  "password": "123456"
+}
+```
+
+A resposta será semelhante a:
+
+```json
+{
+  "token":"eyJhbGciOiJIUzI1NiJ9..."
+}
+```
+
+Copie o valor do token.
+
+---
+
+## 4. Autorize no Swagger
+
+Clique em
+
+```
+Authorize
+```
+
+Copie o token
+
+
+```
+
+Exemplo
+
+```
+eyJhbGciOiJIUzI1NiJ9...
+```
+
+Clique em
+
+```
+Authorize
+```
+
+Depois
+
+```
+Close
+```
+
+Agora todos os endpoints protegidos poderão ser utilizados.
+
+---
+
+# 🥊 Exemplo de cadastro de lutador
+
+POST
+
+```
+/lutadores
+```
+
+```json
+{
+  "nome":"Anderson Silva",
+  "pais":"Brasil",
+  "categoria":"Peso Médio",
+  "altura":1.88
+}
+```
 
 ---
 
 # 🐳 Docker
 
-A aplicação pode ser executada totalmente via Docker Compose.
+Imagem disponível no Docker Hub
 
 ```
-docker compose up --build
+docker pull bruno9515/ufc-api:1.0.0
 ```
 
-### Containers em execução
+---
 
-![Docker](images/docker.png)
+# ☁ Deploy
+
+## Aplicação
+
+Render
+
+https://render.com
+
+## Banco de Dados
+
+Railway
+
+https://railway.app
 
 ---
 
 # 🧪 Testes
 
-O projeto possui testes utilizando:
+O projeto possui testes automatizados utilizando:
 
 - JUnit 5
 - Mockito
 - Spring Boot Test
 
-Cobertura aproximada:
-
-**90%**
-
-### Relatório JaCoCo
-
-![JaCoCo](images/jacoco.png)
+Cobertura de testes superior a **90%** utilizando JaCoCo.
 
 ---
 
-# 🚀 Endpoints
+# 📷 Imagens
 
-## Lutadores
+## Swagger
 
-- GET /lutadores
-- GET /lutadores/{id}
-- POST /lutadores
-- PUT /lutadores/{id}
-- DELETE /lutadores/{id}
-
-## Autenticação
-
-- POST /auth/login
-- POST /auth/register
-- GET /auth/me
+![](images/swagger.png)
 
 ---
 
-# 📮 Testes com Postman
+## Postman
 
-Todas as rotas podem ser testadas utilizando o Postman.
-
-![Postman](images/postman.png)
+![](images/postman.png)
 
 ---
 
-# ⚙ Como executar
+## Docker
 
-## Clonar
+![](images/Docker.png)
 
-```
+---
+
+## Cobertura JaCoCo
+
+![](images/jacoco.png)
+
+---
+
+# ⚙ Como executar localmente
+
+Clone o projeto
+
+```bash
 git clone https://github.com/Bruno9512/ufc-api.git
 ```
 
-## Entrar no projeto
+Entre na pasta
 
-```
+```bash
 cd ufc-api
 ```
 
-## Subir containers
+Execute o Docker Compose
 
-```
-docker compose up --build
+```bash
+docker compose up -d
 ```
 
-## Executar
+Execute a aplicação
 
-```
+```bash
 mvn spring-boot:run
 ```
+
+Swagger
+
+```
+http://localhost:8081/swagger-ui/index.html
+```
+
+---
+
+# 📌 Próximas melhorias
+
+- Refresh Token
+- Testcontainers
+- Cache com Redis
+- Rate Limiting
+- CI/CD com GitHub Actions
+- Monitoramento com Actuator
+- Logs centralizados
 
 ---
 
 # 👨‍💻 Autor
 
-Bruno Souza
+**Bruno de Souza Pereira**
 
-Projeto desenvolvido durante os estudos de **Análise e Desenvolvimento de Sistemas**, com foco em desenvolvimento Backend utilizando Spring Boot.
+LinkedIn
+
+(Adicionar link)
+
+GitHub
+
+https://github.com/Bruno9512
+
+Docker Hub
+
+https://hub.docker.com/u/bruno9515
+
+---
+
+# 📄 Licença
+
+Este projeto está licenciado sob a licença MIT.
