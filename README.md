@@ -11,6 +11,8 @@
 ![Render](https://img.shields.io/badge/Deploy-Render-46E3B7?style=for-the-badge&logo=render)
 ![Railway](https://img.shields.io/badge/Database-Railway-0B0D0E?style=for-the-badge&logo=railway)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+
+
 API REST desenvolvida com **Spring Boot** para gerenciamento de lutadores do UFC.
 
 O projeto foi desenvolvido como portfólio para demonstrar conhecimentos em desenvolvimento Backend utilizando Java, Spring Boot, autenticação JWT, Docker, testes automatizados e deploy em nuvem.
@@ -146,7 +148,7 @@ Exemplo
 {
   "username": "bruno",
   "password": "123456",
-  "role": "ADMIN"
+  "role": "USER"
 }
 ```
 
@@ -191,15 +193,16 @@ Clique em
 Authorize
 ```
 
-Copie o token
+Digite
 
-
+```
+Bearer SEU_TOKEN
 ```
 
 Exemplo
 
 ```
-eyJhbGciOiJIUzI1NiJ9...
+Bearer eyJhbGciOiJIUzI1NiJ9...
 ```
 
 Clique em
