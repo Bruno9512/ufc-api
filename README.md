@@ -11,6 +11,11 @@
 ![Render](https://img.shields.io/badge/Deploy-Render-46E3B7?style=for-the-badge&logo=render)
 ![Railway](https://img.shields.io/badge/Database-Railway-0B0D0E?style=for-the-badge&logo=railway)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+![CI](https://github.com/Bruno9512/ufc-api/actions/workflows/ci.yml/badge.svg)
+![Docker](https://img.shields.io/badge/Docker-Hub-blue)
+![Java](https://img.shields.io/badge/Java-21-red)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-green)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 
 API REST desenvolvida com **Spring Boot** para gerenciamento de lutadores do UFC.
