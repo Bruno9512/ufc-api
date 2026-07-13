@@ -148,7 +148,7 @@ Exemplo
 {
   "username": "bruno",
   "password": "123456",
-  "role": "USER"
+  "role": "ADMIN"
 }
 ```
 
@@ -356,7 +356,7 @@ http://localhost:8081/swagger-ui/index.html
 
 LinkedIn
 
-(Adicionar link)
+www.linkedin.com/in/bruno-de-souza-pereira-0b1156355
 
 GitHub
 
