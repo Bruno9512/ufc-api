@@ -18,6 +18,24 @@ API REST desenvolvida com **Spring Boot** para gerenciamento de lutadores do UFC
 
 O projeto foi desenvolvido como portfólio para demonstrar conhecimentos em desenvolvimento Backend utilizando Java, Spring Boot, autenticação JWT, Docker, testes automatizados e deploy em nuvem.
 
+## 📑 Índice
+
+- 🚀 Demonstração
+- 📖 Funcionalidades
+- 🛠 Tecnologias
+- 🏗 Arquitetura
+- 📂 Estrutura
+- 🔐 Autenticação
+- 🚀 Como testar
+- 🥊 Cadastro de lutador
+- 🐳 Docker
+- ☁ Deploy
+- 🧪 Testes
+- 📷 Imagens
+- ⚙ Execução Local
+- 👨‍💻 Autor
+- 📄 Licença
+
 ---
 
 # 🚀 Demonstração
