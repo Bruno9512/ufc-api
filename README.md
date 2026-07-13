@@ -181,7 +181,7 @@ A resposta será semelhante a:
 }
 ```
 
-Copie o valor do token.
+Copie o valor do token(Sem as aspas).
 
 ---
 
@@ -193,16 +193,10 @@ Clique em
 Authorize
 ```
 
-Digite
+Cole o token
 
 ```
-Bearer SEU_TOKEN
-```
-
-Exemplo
-
-```
-Bearer eyJhbGciOiJIUzI1NiJ9...
+eyJhbGciOiJIUzI1NiJ9...
 ```
 
 Clique em
