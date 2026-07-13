@@ -332,15 +332,7 @@ http://localhost:8081/swagger-ui/index.html
 
 ---
 
-# 📌 Próximas melhorias
 
-- Refresh Token
-- Testcontainers
-- Cache com Redis
-- Rate Limiting
-- CI/CD com GitHub Actions
-- Monitoramento com Actuator
-- Logs centralizados
 
 ---
 
