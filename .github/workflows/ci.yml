@@ -1,0 +1,62 @@
+name: UFC API - Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+
+      - name: Checkout do projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Exibir versão do Java
+        run: java -version
+
+      - name: Exibir versão do Maven
+        run: mvn -version
+
+      - name: Compilar projeto
+        run: mvn clean compile
+
+      - name: Executar testes
+        run: mvn test
+
+      - name: Gerar pacote da aplicação
+        run: mvn package -DskipTests
+
+      - name: Publicar relatório JaCoCo
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/
+
+      - name: Publicar JAR gerado
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: spring-boot-jar
+          path: target/*.jar
