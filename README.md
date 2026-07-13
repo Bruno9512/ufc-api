@@ -74,14 +74,23 @@ https://ufc-api-chk7.onrender.com/swagger-ui/index.html
 
 # 🏗 Arquitetura
 
-```
-Controller
-     ↓
-Service
-     ↓
-Repository
-     ↓
-MySQL
+```mermaid
+flowchart TD
+
+A[Cliente]
+
+B[Controller]
+
+C[Service]
+
+D[Repository]
+
+E[(MySQL)]
+
+A --> B
+B --> C
+C --> D
+D --> E
 ```
 
 O projeto utiliza arquitetura em camadas seguindo as boas práticas do Spring Boot.
