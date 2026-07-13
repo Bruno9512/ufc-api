@@ -4,12 +4,17 @@
  */
 package com.projeto.ufc;
 
+
+import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 
 /**
  *
  * @author bruni
  */
+@SpringBootTest
+@ActiveProfiles("test")
 public class UfcApplicationMainTest {
     
     @Test
