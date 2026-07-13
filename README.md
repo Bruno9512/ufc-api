@@ -288,7 +288,7 @@ Cobertura de testes superior a **90%** utilizando JaCoCo.
 
 ## Docker
 
-![](images/Docker.png)
+![](images/docker.png)
 
 ---
 
